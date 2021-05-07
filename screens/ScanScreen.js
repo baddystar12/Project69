@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import {BarcodeScanner} from 'expo-barcode-scanner';
+import {BarCodeScanner} from 'expo-barcode-scanner';
 import * as Permissions from 'expo-permissions';
 
 export default class ScanScreen extends React.Component{
@@ -31,8 +31,8 @@ export default class ScanScreen extends React.Component{
     render(){
         if(this.state.buttonState === 'clicked' && this.state.hasCameraPermissions){
             return(
-                <BarcodeScanner onBarcodeScanned={scanned?undefined:this.handleBarcodeScanned}>
-                </BarcodeScanner>
+                <BarCodeScanner onBarcodeScanned={scanned?undefined:this.handleBarcodeScanned}>
+                </BarCodeScanner>
             )
         }
         else if(this.state.buttonState==='normal'){
